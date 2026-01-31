@@ -337,7 +337,7 @@ export default function Home() {
               <img
                 src={`https://skillicons.dev/icons?i=${tech}`}
                 alt={tech}
-                className="w-5 h-5 dark:grayscale group-hover:grayscale-0 transition-all duration-500"
+                className="w-5 h-5 transition-all duration-300"
               />
               <span className="text-[11px] font-bold capitalize tracking-tight">
                 {tech}

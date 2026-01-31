@@ -11,7 +11,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Adeeb | Creative Developer",
+  title: "Adeeb",
   description: "Creative developer building performant web experiences.",
   icons: {
     icon: "https://api.dicebear.com/7.x/pixel-art/svg?seed=Adeeb&backgroundColor=b6e3f4",
