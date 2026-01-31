@@ -151,7 +151,7 @@ export default function Home() {
             </div>
             <div className="flex flex-col gap-2">
               <h1 className="hero-title text-3xl font-extrabold tracking-tight text-foreground sm:text-5xl">
-                Adeeb Iqbal Khan ——
+                Adeeb Khan —
               </h1>
               <p className="hero-description text-xl text-muted-foreground font-medium">
                 Full Stack Developer & Designer.
@@ -161,7 +161,7 @@ export default function Home() {
           <div className="flex flex-col gap-3 items-start sm:items-end">
             <div className="flex items-center gap-2 bg-muted/30 px-3 py-1.5 rounded-full border border-border">
               <span className="text-xs font-mono uppercase tracking-wider text-muted-foreground">
-                Currently building @doodlzz
+                Currently: Super 30 @100xdevs
               </span>
             </div>
             <div className="flex items-center gap-4 text-xs text-muted-foreground/60 font-mono uppercase tracking-widest bg-muted/10 px-3 py-1 rounded-md border border-border/50">
@@ -185,8 +185,8 @@ export default function Home() {
             <span className="text-foreground font-semibold underline decoration-border underline-offset-8">
               performant
             </span>{" "}
-            web experiences. Currently obsessed with design systems, animations,
-            and everything in between. I build interactive apps using{" "}
+            web experiences. Obsessed with tech, music,
+            and fitness. I build interactive apps using{" "}
             <span className="inline-flex items-center gap-1.5 bg-muted/40 border border-border px-2 py-1 rounded-md text-xs font-semibold">
               <img
                 src="https://skillicons.dev/icons?i=nextjs"
@@ -337,7 +337,7 @@ export default function Home() {
               <img
                 src={`https://skillicons.dev/icons?i=${tech}`}
                 alt={tech}
-                className="w-5 h-5 grayscale group-hover:grayscale-0 transition-all duration-500"
+                className="w-5 h-5 dark:grayscale group-hover:grayscale-0 transition-all duration-500"
               />
               <span className="text-[11px] font-bold capitalize tracking-tight">
                 {tech}
@@ -437,7 +437,7 @@ export default function Home() {
       {/* Contact Section */}
       <section className="flex flex-col gap-10 pt-10 pb-6" id="contact">
         <div className="flex items-center gap-4">
-          <div className="badge">
+          <div className="badge inline-flex items-center gap-2">
             <span className="w-1.5 h-1.5 bg-green-500 rounded-full" />
             Connect
           </div>
@@ -514,7 +514,7 @@ export default function Home() {
       {/* Footer / Connect */}
       <footer className="pt-12 border-t border-border flex flex-col gap-8">
         <p className="text-[10px] text-center font-bold uppercase tracking-widest text-muted-foreground/40">
-          © {new Date().getFullYear()} Adeeb Iqbal Khan. Built with love and a
+          © {new Date().getFullYear()} Adeeb Khan. Built with love and a
           lot of caffeine.
         </p>
       </footer>

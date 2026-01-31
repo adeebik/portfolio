@@ -49,7 +49,7 @@ export function ProjectCard({ title, description, image, tags, github, demo, vid
             src={image || "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&q=80&w=1000"} 
             alt={title}
             fill
-            className="object-cover  transition-transform duration-700 group-hover:scale-105"
+            className="object-cover transition-transform duration-700 group-hover:scale-105"
             unoptimized
           />
           {video && (
