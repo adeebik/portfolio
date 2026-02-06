@@ -12,6 +12,7 @@ interface ProjectProps {
   title: string;
   description: string;
   image?: string;
+  hoverImage?: string;
   tags: string[];
   github?: string;
   demo?: string;
@@ -19,8 +20,9 @@ interface ProjectProps {
 }
 
 
-export function ProjectCard({ title, description, image, tags, github, demo, video }: ProjectProps) {
+export function ProjectCard({ title, description, image, hoverImage, tags, github, demo, video }: ProjectProps) {
   const [isOpen, setIsOpen] = useState(false);
+  const [isHovered, setIsHovered] = useState(false);
 
   // Lock scroll when modal is open
   useEffect(() => {
@@ -39,17 +41,21 @@ export function ProjectCard({ title, description, image, tags, github, demo, vid
 
   return (
     <>
-      <div className="group relative flex flex-col gap-6 p-1 bg-card/20 border border-border/50 rounded-[2.5rem] glass hover:bg-card/40 transition-all duration-500 mb-6">
+      <div 
+        className="group relative flex flex-col gap-6 p-1 bg-card/20 border border-border/50 rounded-[2.5rem] glass hover:bg-card/40 transition-all duration-500 mb-6"
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+      >
         {/* Media Thumbnail */}
         <div 
           className="relative w-full aspect-[16/10] rounded-[2.2rem] overflow-hidden border border-border/30 cursor-pointer"
           onClick={() => video && setIsOpen(true)}
         >
           <Image 
-            src={image || "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&q=80&w=1000"} 
+            src={(isHovered && hoverImage) ? hoverImage : (image || "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&q=80&w=1000")} 
             alt={title}
             fill
-            className="object-cover transition-transform duration-700 group-hover:scale-105"
+            className="object-cover transition-all duration-700 group-hover:scale-105"
             unoptimized
           />
           {video && (
@@ -99,17 +105,21 @@ export function ProjectCard({ title, description, image, tags, github, demo, vid
             {tags.map((tag) => (
               <div 
                 key={tag} 
-                className="flex items-center gap-1.5 px-2.5 py-1 bg-muted/30 border border-border/50 rounded-lg text-[9px] font-bold text-muted-foreground uppercase tracking-wider"
+                className="group/icon relative flex items-center justify-center p-2 bg-muted/30 border border-border/50 rounded-lg transition-transform hover:scale-110"
               >
+                <div className="absolute bottom-full mb-2 left-1/2 -translate-x-1/2 opacity-0 group-hover/icon:opacity-100 transition-opacity duration-200 pointer-events-none z-10">
+                  <span className="bg-background border border-border px-2 py-1 rounded-md text-[10px] font-bold shadow-xl whitespace-nowrap">
+                    {tag}
+                  </span>
+                </div>
                 <Image 
                   src={`https://skillicons.dev/icons?i=${tag.toLowerCase().replace(/[\s.]/g, '')}`}
                   alt={tag}
-                  width={11}
-                  height={11}
-                  className="grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 transition-all"
+                  width={20}
+                  height={20}
+                  className="grayscale opacity-70 group-hover/icon:grayscale-0 group-hover/icon:opacity-100 transition-all"
                   unoptimized
                 />
-                {tag}
               </div>
             ))}
           </div>

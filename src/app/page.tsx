@@ -275,6 +275,7 @@ export default function Home() {
             demo="https://mindly-fe-five.vercel.app/"
             video="https://www.loom.com/share/abdf456ddfae4eb08687f7b74174b3ca"
             image="/mindly-mockup.png"
+            hoverImage="/mindly-light.png"
           />
           <ProjectCard
             title="Chat-App"
@@ -284,6 +285,7 @@ export default function Home() {
             demo="https://chat-app-fe-sepia.vercel.app/"
             video="https://www.loom.com/share/4774a0dbeba946e8ae7b4708ab420a54"
             image="/chat-app-mockup.png"
+            hoverImage="/chat-app-light.png"
           />
         </div>
 
@@ -328,7 +330,6 @@ export default function Home() {
             "github",
             "postman",
             "figma",
-            "wordpress",
           ].map((tech) => (
             <div
               key={tech}
